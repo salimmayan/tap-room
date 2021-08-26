@@ -38,7 +38,7 @@ class KegControl extends React.Component {
 
     handleEdit = (kegId) => {
         // const newMasterKegList = this.state.masterKegList.filter((keg) => keg.kegId !== kegId).concat(keg);
-        const selectedKeg = this.state.masterKegList.filter(keg => keg.kegId === kegId)[0];
+        // const selectedKeg = this.state.masterKegList.filter(keg => keg.kegId === kegId)[0];
         this.setState({ editing: true, formVisibleOnPage: false });
     }
 
@@ -46,6 +46,22 @@ class KegControl extends React.Component {
         console.log("keg in handleEditKegForm is ");
         console.log(keg);
         const newMasterKegList = this.state.masterKegList.filter((tempKeg) => tempKeg.kegId !== keg.kegId).concat(keg);
+        this.setState({ masterKegList: newMasterKegList, editing: false, formVisibleOnPage: false, selectedKeg: null });
+    }
+
+    handleSellPint = (kegId) => {
+        console.log("in handleSellPint method");
+        const tempDisableButton = "disabled";
+        const tempSelectedKeg = this.state.masterKegList.filter((keg) => keg.kegId === kegId)[0];
+        if (tempSelectedKeg.kegQty !== 0) {
+            tempSelectedKeg.kegQty = tempSelectedKeg.kegQty - 1;
+        }
+        else if (tempSelectedKeg.kegQty === 0) {
+            tempSelectedKeg.alertMessage = "Out Of Stock !!!";
+            tempSelectedKeg.disableButton = tempDisableButton;
+        }
+
+        const newMasterKegList = this.state.masterKegList.filter((tempKeg) => tempKeg.kegId !== tempSelectedKeg.kegId).concat(tempSelectedKeg);
         this.setState({ masterKegList: newMasterKegList, editing: false, formVisibleOnPage: false, selectedKeg: null });
     }
 
@@ -60,7 +76,7 @@ class KegControl extends React.Component {
         }
         else if (this.state.selectedKeg != null) {
             console.log("Inside selectedKeg not null");
-            componentToDisplay = <KegDetail keg={this.state.selectedKeg} onHandleDelete={this.handleDelete} onHandleEdit={this.handleEdit} />
+            componentToDisplay = <KegDetail keg={this.state.selectedKeg} onHandleDelete={this.handleDelete} onHandleEdit={this.handleEdit}  />
             buttonText = "Go back to Keg List";
         }
         else if (this.state.formVisibleOnPage === true) {
@@ -70,7 +86,7 @@ class KegControl extends React.Component {
         }
         else {
             console.log("Inside formVisibleOnPage false");
-            componentToDisplay = <KegList onKegSelection={this.handleChangingSelectedKeg} kegList={this.state.masterKegList} />
+            componentToDisplay = <KegList onKegSelection={this.handleChangingSelectedKeg} kegList={this.state.masterKegList} onSellPint={this.handleSellPint} />
             buttonText = "Add New Keg";
         }
 

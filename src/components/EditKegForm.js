@@ -6,7 +6,7 @@ function EditKegForm(props) {
     function handleEditKegFormSubmission(event) {
         event.preventDefault();
         const kegId = props.keg.kegId;
-        props.onEditKegForm({ kegName: event.target.kegName.value, kegBrand: event.target.kegBrand.value, kegPrice: event.target.kegPrice.value, kegFlavor: event.target.kegFlavor.value, kegId: kegId });
+        props.onEditKegForm({ kegName: event.target.kegName.value, kegBrand: event.target.kegBrand.value, kegPrice: event.target.kegPrice.value, kegFlavor: event.target.kegFlavor.value, kegQty: event.target.kegQty.value, kegId: kegId });
     }
 
     return (
