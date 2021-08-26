@@ -2,6 +2,7 @@ import React from 'react';
 import NewKegForm from './NewKegForm';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
+import EditKegForm from './EditKegForm';
 
 class KegControl extends React.Component {
     constructor(props) {
@@ -22,36 +23,54 @@ class KegControl extends React.Component {
 
     handleAddingNewKegToList = (newKeg) => {
         const newMasterKegList = this.state.masterKegList.concat(newKeg);
-        this.setState({masterKegList: newMasterKegList, formVisibleOnPage: false} )
+        this.setState({ masterKegList: newMasterKegList, formVisibleOnPage: false })
     }
 
     handleChangingSelectedKeg = (kegId) => {
         const selectedKeg = this.state.masterKegList.filter(keg => keg.kegId === kegId)[0];
-        this.setState({selectedKeg: selectedKeg, formVisibleOnPage: false });
+        this.setState({ selectedKeg: selectedKeg, formVisibleOnPage: false });
     }
 
     handleDelete = (kegId) => {
         const newMasterKegList = this.state.masterKegList.filter((keg) => keg.kegId !== kegId);
-          this.setState({masterKegList: newMasterKegList, selectedKeg: null, formVisibleOnPage: false });
+        this.setState({ masterKegList: newMasterKegList, selectedKeg: null, formVisibleOnPage: false });
+    }
+
+    handleEdit = (kegId) => {
+        // const newMasterKegList = this.state.masterKegList.filter((keg) => keg.kegId !== kegId).concat(keg);
+        const selectedKeg = this.state.masterKegList.filter(keg => keg.kegId === kegId)[0];
+        this.setState({ editing: true, formVisibleOnPage: false });
+    }
+
+    handleEditKegForm = (keg) => {
+        console.log("keg in handleEditKegForm is ");
+        console.log(keg);
+        const newMasterKegList = this.state.masterKegList.filter((tempKeg) => tempKeg.kegId !== keg.kegId).concat(keg);
+        this.setState({ masterKegList: newMasterKegList, editing: false, formVisibleOnPage: false, selectedKeg: null });
     }
 
     render() {
         // this is where methods connected to button/element click will go to (inside render() before return)
         let componentToDisplay = null;
         let buttonText = null;
-        if(this.state.selectedKeg != null){
+        if (this.state.editing === true) {
+            console.log("Inside editing is true");
+            componentToDisplay = <EditKegForm keg={this.state.selectedKeg} onEditKegForm={this.handleEditKegForm} />
+            buttonText = "Go back to Keg List";
+        }
+        else if (this.state.selectedKeg != null) {
             console.log("Inside selectedKeg not null");
-            componentToDisplay = <KegDetail keg = {this.state.selectedKeg} onHandleDelete = {this.handleDelete} onHandleEdit = {this.handleEdit} />
+            componentToDisplay = <KegDetail keg={this.state.selectedKeg} onHandleDelete={this.handleDelete} onHandleEdit={this.handleEdit} />
             buttonText = "Go back to Keg List";
         }
         else if (this.state.formVisibleOnPage === true) {
             console.log("Inside formVisibleOnPage true");
-            componentToDisplay = <NewKegForm onNewKegForm = {this.handleAddingNewKegToList} />
+            componentToDisplay = <NewKegForm onNewKegForm={this.handleAddingNewKegToList} />
             buttonText = "Go back to Keg List";
         }
         else {
             console.log("Inside formVisibleOnPage false");
-            componentToDisplay = <KegList onKegSelection = {this.handleChangingSelectedKeg} kegList = {this.state.masterKegList} />
+            componentToDisplay = <KegList onKegSelection={this.handleChangingSelectedKeg} kegList={this.state.masterKegList} />
             buttonText = "Add New Keg";
         }
 

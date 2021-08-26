@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 function EditKegForm(props) {
     function handleEditKegFormSubmission(event) {
         event.preventDefault();
-        props.onEditKegForm({ kegName: event.target.kegName.value, kegBrand: event.target.kegBrand.value, kegPrice: event.target.kegPrice.value, kegFlavor: event.target.kegFlavor.value });
+        const kegId = props.keg.kegId;
+        props.onEditKegForm({ kegName: event.target.kegName.value, kegBrand: event.target.kegBrand.value, kegPrice: event.target.kegPrice.value, kegFlavor: event.target.kegFlavor.value, kegId: kegId });
     }
 
     return (
@@ -16,7 +17,8 @@ function EditKegForm(props) {
 }
 
 EditKegForm.propTypes = {
-    onEditKegForm: PropTypes.func
+    onEditKegForm: PropTypes.func,
+    keg: PropTypes.object
 }
 
 export default EditKegForm;
