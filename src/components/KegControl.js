@@ -28,11 +28,11 @@ class KegControl extends React.Component {
         let componentToDisplay = null;
         let buttonText = null;
         if (this.state.formVisibleOnPage === true) {
-            componentToDisplay = <NewKegForm />
+            componentToDisplay = <NewKegForm onNewKegForm = {this.handleAddingNewKegToList} />
             buttonText = "Go back to Keg List";
         }
         else {
-            componentToDisplay = <KegList onNewKegForm = {this.handleAddingNewKegToList} />
+            componentToDisplay = <KegList kegList = {this.state.masterKegList} />
             buttonText = "Add New Keg";
         }
 

@@ -10,13 +10,13 @@ function EditKegForm(props) {
 
     return (
         <React.Fragment>
-            <ReUsableForm resuableFormSubmissionHandler={props.handleEditKegFormSubmission} buttonText="Edit Keg" />
+            <ReUsableForm reusableFormSubmissionHandler={handleEditKegFormSubmission} buttonText="Edit Keg" />
         </React.Fragment>
     );
+}
 
-    EditKegForm.propTypes = {
-        onEditKegForm: PropTypes.func
-    }
+EditKegForm.propTypes = {
+    onEditKegForm: PropTypes.func
 }
 
 export default EditKegForm;
