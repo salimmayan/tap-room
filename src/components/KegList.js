@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 function KegList(props) {
     return (
         <React.Fragment>
-            {props.kegList.map((keg) => {
-                return <Keg onKegName={keg.kegName} />
+            {props.kegList.map((currentKeg) => {
+                return <Keg onIndividualKeg={currentKeg} />
             })}
         </React.Fragment>
     );
