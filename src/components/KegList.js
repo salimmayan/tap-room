@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 function KegList(props) {
     const gridContainer = {
         display: 'grid',
+        justifyItems: 'center',
+        alignItems: 'center',
         gridTemplateColumns: 'auto auto auto',
+        gridTemplateRows: 'auto',
         // backgroundColor: '#2196F3',
         padding: '10px',
         margin: '20px',

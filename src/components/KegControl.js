@@ -43,8 +43,8 @@ class KegControl extends React.Component {
     }
 
     handleEditKegForm = (keg) => {
-        console.log("keg in handleEditKegForm is ");
-        console.log(keg);
+        // console.log("keg in handleEditKegForm is ");
+        // console.log(keg);
         const newMasterKegList = this.state.masterKegList.filter((tempKeg) => tempKeg.kegId !== keg.kegId).concat(keg);
         this.setState({ masterKegList: newMasterKegList, editing: false, formVisibleOnPage: false, selectedKeg: null });
     }
@@ -62,7 +62,7 @@ class KegControl extends React.Component {
         }
         else if (tempSelectedKeg.kegQty > 0) {
             if (tempSelectedKeg.kegQty >= 1 && tempSelectedKeg.kegQty <= 9) {
-              tempSelectedKeg.kegAlertMessage = "Almost Empty !";
+                tempSelectedKeg.kegAlertMessage = "Almost Empty !";
             }
         }
 
@@ -81,7 +81,7 @@ class KegControl extends React.Component {
         }
         else if (this.state.selectedKeg != null) {
             console.log("Inside selectedKeg not null");
-            componentToDisplay = <KegDetail keg={this.state.selectedKeg} onHandleDelete={this.handleDelete} onHandleEdit={this.handleEdit}  />
+            componentToDisplay = <KegDetail keg={this.state.selectedKeg} onHandleDelete={this.handleDelete} onHandleEdit={this.handleEdit} />
             buttonText = "Go back to Keg List";
         }
         else if (this.state.formVisibleOnPage === true) {
@@ -95,13 +95,21 @@ class KegControl extends React.Component {
             buttonText = "Add New Keg";
         }
 
+        const buttonCSS = {
+            fontSize: '30px',
+            textAlign: 'center',
+            padding: '5px',
+            margin: '5px',
+            fontSize: 'xxLarge',
+            color: 'orange'
+        }
+
         return (
             <React.Fragment>
-                <h1>KegControl</h1>
+                {/* <h1>KegControl</h1> */}
                 {componentToDisplay} {/* why does componentToDisplay while it needs curly braces, not need "this." */}
-                <br></br>
-                <br></br>
-                <button onClick={this.handleClick}>{buttonText}</button>
+                <div style={buttonCSS}>
+                    <button onClick={this.handleClick}>{buttonText}</button></div>
             </React.Fragment>
         )
     }
