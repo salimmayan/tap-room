@@ -6,7 +6,7 @@ function KegList(props) {
     return (
         <React.Fragment>
             {props.kegList.map((currentKeg) => 
-                 <Keg whenKegClicked ={props.onKegSelection} onIndividualKeg={currentKeg} key={currentKeg.id} />
+                 <Keg whenKegClicked ={props.onKegSelection} onIndividualKeg={currentKeg} key={currentKeg.kegId} />
             )}
         </React.Fragment>
     );

@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Keg(props) {
-    const { kegName, kegBrand, kegPrice, kegFlavor, kegId, whenKegClicked } = props;
+    // const { kegName, kegBrand, kegPrice, kegFlavor, kegId } = props.onIndividualKeg;
 
     return (
         <React.Fragment>
-            <h1>{kegName}</h1>
-            <p>{kegBrand}</p>
-            <p>{kegPrice}</p>
-            <p>{kegFlavor}</p>
-            <p>{kegId}</p>
-            <button onClick = {() => whenKegClicked(kegId)}>See Keg Details</button>
+            <h1>{props.onIndividualKeg.kegName}</h1>
+            <p>{props.onIndividualKeg.kegBrand}</p>
+            <p>{props.onIndividualKeg.kegPrice}</p>
+            <p>{props.onIndividualKeg.kegFlavor}</p>
+            <p>{props.onIndividualKeg.kegId}</p>
+            <button onClick = {() => props.whenKegClicked(props.onIndividualKeg.kegId)}>See Keg Details</button>
         </React.Fragment>
     );
 }

@@ -24,25 +24,27 @@ class KegControl extends React.Component {
         this.setState({masterKegList: newMasterKegList, formVisibleOnPage: false} )
     }
 
-    handleChangingSelectedKeg = (kegId) => {
-        const selectedKeg = this.state.masterKegList.filter(keg => keg.id === kegId)[0];
-        this.setState({selectedKeg: selectedKeg});
+    handleChangingSelectedKeg = (Id) => {
+        const selectedKeg = this.state.masterKegList.filter(keg => keg.kegId === Id)[0];
+        this.setState({selectedKeg: selectedKeg, formVisibleOnPage: false });
     }
 
     render() {
-
         // this is where methods connected to button/element click will go to (inside render() before return)
         let componentToDisplay = null;
         let buttonText = null;
         if(this.state.selectedKeg != null){
+            console.log("Inside selectedKeg not null");
             componentToDisplay = <KegDetail keg = {this.state.selectedKeg} onHandleDelete = {this.handleDelete} onHandleEdit = {this.handleEdit} />
             buttonText = "Go back to Keg List";
         }
         else if (this.state.formVisibleOnPage === true) {
+            console.log("Inside formVisibleOnPage true");
             componentToDisplay = <NewKegForm onNewKegForm = {this.handleAddingNewKegToList} />
             buttonText = "Go back to Keg List";
         }
         else {
+            console.log("Inside formVisibleOnPage false");
             componentToDisplay = <KegList onKegSelection = {this.handleChangingSelectedKeg} kegList = {this.state.masterKegList} />
             buttonText = "Add New Keg";
         }
