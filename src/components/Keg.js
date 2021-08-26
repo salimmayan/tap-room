@@ -7,15 +7,17 @@ function Keg(props) {
     return (
         <React.Fragment>
             <h1>{kegName}</h1>
-            <h1>{kegBrand}</h1>
-            <h1>{kegPrice}</h1>
-            <h1>{kegFlavor}</h1>
+            <p>{kegBrand}</p>
+            <p>{kegPrice}</p>
+            <p>{kegFlavor}</p>
+            <button onClick = {props.whenKegClicked}>See Keg Details</button>
         </React.Fragment>
     );
 }
 
 Keg.propTypes = {
-    onIndividualKeg: PropTypes.string
+    onIndividualKeg: PropTypes.string,
+    whenKegClicked: PropTypes.func
 }
 
 export default Keg;

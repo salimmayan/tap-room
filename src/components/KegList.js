@@ -6,14 +6,15 @@ function KegList(props) {
     return (
         <React.Fragment>
             {props.kegList.map((currentKeg) => {
-                return <Keg onIndividualKeg={currentKeg} />
+                return <Keg whenKegClicked ={props.onKegSelection} onIndividualKeg={currentKeg} />
             })}
         </React.Fragment>
     );
 }
 
 KegList.propTypes = {
-    kegList: PropTypes.object
+    kegList: PropTypes.object,
+    onKegSelection: PropTypes.func
 }
 
 export default KegList;

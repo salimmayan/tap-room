@@ -22,6 +22,10 @@ class KegControl extends React.Component {
         this.setState({masterKegList: newMasterKegList, formVisibleOnPage: false} )
     }
 
+    handleChangingSelectedKeg = () => {
+
+    }
+
     render() {
 
         // this is where methods connected to button/element click will go to (inside render() before return)
@@ -32,7 +36,7 @@ class KegControl extends React.Component {
             buttonText = "Go back to Keg List";
         }
         else {
-            componentToDisplay = <KegList kegList = {this.state.masterKegList} />
+            componentToDisplay = <KegList onKegSelection = {this.handleChangingSelectedKeg} kegList = {this.state.masterKegList} />
             buttonText = "Add New Keg";
         }
 
