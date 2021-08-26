@@ -1,13 +1,15 @@
 import React from 'react';
 import NewKegForm from './NewKegForm';
 import KegList from './KegList';
+import KegDetail from './KegDetail';
 
 class KegControl extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             formVisibleOnPage: false,
-            masterKegList: []
+            masterKegList: [],
+            selectedKeg: null,
         };
     }
 
@@ -22,8 +24,9 @@ class KegControl extends React.Component {
         this.setState({masterKegList: newMasterKegList, formVisibleOnPage: false} )
     }
 
-    handleChangingSelectedKeg = () => {
-
+    handleChangingSelectedKeg = (kegId) => {
+        const selectedKeg = this.state.masterKegList.filter(keg => keg.id === kegId)[0];
+        this.setState({selectedKeg: selectedKeg});
     }
 
     render() {
@@ -31,7 +34,11 @@ class KegControl extends React.Component {
         // this is where methods connected to button/element click will go to (inside render() before return)
         let componentToDisplay = null;
         let buttonText = null;
-        if (this.state.formVisibleOnPage === true) {
+        if(this.state.selectedKeg != null){
+            componentToDisplay = <KegDetail keg = {this.state.selectedKeg} onHandleDelete = {this.handleDelete} onHandleEdit = {this.handleEdit} />
+            buttonText = "Go back to Keg List";
+        }
+        else if (this.state.formVisibleOnPage === true) {
             componentToDisplay = <NewKegForm onNewKegForm = {this.handleAddingNewKegToList} />
             buttonText = "Go back to Keg List";
         }

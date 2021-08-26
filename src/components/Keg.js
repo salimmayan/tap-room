@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Keg(props) {
-    const { kegName, kegBrand, kegPrice, kegFlavor } = props.onIndividualKeg;
+    const { kegName, kegBrand, kegPrice, kegFlavor, kegId, whenKegClicked } = props;
 
     return (
         <React.Fragment>
@@ -10,13 +10,14 @@ function Keg(props) {
             <p>{kegBrand}</p>
             <p>{kegPrice}</p>
             <p>{kegFlavor}</p>
-            <button onClick = {props.whenKegClicked}>See Keg Details</button>
+            <p>{kegId}</p>
+            <button onClick = {() => whenKegClicked(kegId)}>See Keg Details</button>
         </React.Fragment>
     );
 }
 
 Keg.propTypes = {
-    onIndividualKeg: PropTypes.string,
+    onIndividualKeg: PropTypes.object,
     whenKegClicked: PropTypes.func
 }
 
