@@ -56,9 +56,14 @@ class KegControl extends React.Component {
         if (tempSelectedKeg.kegQty !== 0) {
             tempSelectedKeg.kegQty = tempSelectedKeg.kegQty - 1;
         }
-        else if (tempSelectedKeg.kegQty === 0) {
-            tempSelectedKeg.alertMessage = "Out Of Stock !!!";
-            tempSelectedKeg.disableButton = tempDisableButton;
+        if (tempSelectedKeg.kegQty === 0) {
+            tempSelectedKeg.kegAlertMessage = "Out Of Stock !!!";
+            tempSelectedKeg.kegDisableButton = tempDisableButton;
+        }
+        else if (tempSelectedKeg.kegQty > 0) {
+            if (tempSelectedKeg.kegQty >= 1 && tempSelectedKeg.kegQty <= 9) {
+              tempSelectedKeg.kegAlertMessage = "Almost Empty !";
+            }
         }
 
         const newMasterKegList = this.state.masterKegList.filter((tempKeg) => tempKeg.kegId !== tempSelectedKeg.kegId).concat(tempSelectedKeg);

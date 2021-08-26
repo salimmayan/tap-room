@@ -9,7 +9,7 @@ function NewKegForm(props) {
         // console.log("kegName is " + event.target.kegName.value);
         // const kegId = {};
         // ticket.id = v4()
-        props.onNewKegForm({ kegName: event.target.kegName.value, kegBrand: event.target.kegBrand.value, kegPrice: event.target.kegPrice.value, kegFlavor: event.target.kegFlavor.value, kegQty: event.target.kegQty.value, kegId: v4() });
+        props.onNewKegForm({ kegName: event.target.kegName.value, kegBrand: event.target.kegBrand.value, kegPrice: event.target.kegPrice.value, kegFlavor: event.target.kegFlavor.value, kegQty: event.target.kegQty.value, kegDisableButton: "", kegAlertMessage: "", kegId: v4() });
     }
 
     return (
