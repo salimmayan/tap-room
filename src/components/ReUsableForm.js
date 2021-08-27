@@ -1,17 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import "./Keg.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ReUsableForm(props) {
+
+    const coralColor = {
+        color: 'coral',
+        fontFamily: 'Indie Flower", cursive',
+        fontWeight: '700',
+        textAlign: 'center'
+    }
+
     return (
         <React.Fragment>
+            <div className="reUsableKegForm coralColor">
+            <h5 style={coralColor}>Add New Keg</h5>
             <form onSubmit={props.reusableFormSubmissionHandler}>
                 <input required type='text' name='kegName' placeholder='Enter Name' />
                 <input required type='text' name='kegBrand' placeholder='Enter Brand' />
                 <input required type='number' name='kegPrice' placeholder='Enter Price ($)' />
                 <input required type='text' name='kegFlavor' placeholder='Enter Keg Flavor' />
                 {/* <input required type='number' name='kegQty' placeholder='Enter Keg Quantity' /> */}
-                <button required type='submit'>{props.buttonText}</button>
+                <button className="btn-primary" required type='submit'>{props.buttonText}</button>
             </form>
+            </div>
         </React.Fragment>
     );
 }

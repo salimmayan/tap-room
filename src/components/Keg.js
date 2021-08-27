@@ -8,38 +8,46 @@ function Keg(props) {
 
 
     const gridItem = {
-        backgroundColor: '#9ACD32',
+        backgroundColor: 'azure',
         border: '1px solid rgba(0, 0, 0, 0.8)',
         padding: '20px',
         fontSize: '30px',
         textAlign: 'center',
         padding: '5px',
-        margin: '5px',
-        width: '30%',
+        margin: '10%',
+        width: '33%',
         height: '100%',
         fontSize: 'small',
         borderRadius: '5px'
-    }
-
-    const labelCSS = {
-        textAlign: 'center',
-        color: 'orange'
     }
 
     const coralColor = {
         color: 'coral',
         fontFamily: 'Indie Flower", cursive',
         fontWeight: '700',
-        textAlign: 'right'
-      }
+        textAlign: 'center'
+    }
 
-      const pElement = {
+    const alignleft = {
+        float: 'left',
         color: 'black',
         fontFamily: 'Indie Flower", cursive',
         fontWeight: '700',
-        textAlign: 'left'
-      }
+    }
+    const alignright = {
+        float: 'right',
+        color: 'coral',
+        fontFamily: 'Indie Flower", cursive',
+        fontWeight: '700',
+    }
 
+    const purpleColor = {
+        color: 'purple'
+    }
+
+    const redColor = {
+        color: 'red'
+    }
 
     const left = Math.trunc(props.now);
     return (
@@ -48,15 +56,13 @@ function Keg(props) {
             <div style={gridItem} >
                 <ProgressBar now={props.now} animated striped variant="warning" label={`${left}% left`} />
                 <h5 style={coralColor}> {props.onIndividualKeg.kegName}</h5>
-                <p><span style={pElement}>Brand: </span><span style={coralColor}>{props.onIndividualKeg.kegBrand}</span></p>
-                <p>Price: <span style={coralColor}>{props.onIndividualKeg.kegPrice}</span></p>
-                <p>Flavor: <span style={coralColor}>{props.onIndividualKeg.kegFlavor}</span></p>
-                {/* <p>Id: {props.onIndividualKeg.kegId}</p>  */}
-                <p>Qty: <span style={coralColor}>{props.onIndividualKeg.kegQty}</span></p>
+                <span style={alignleft}>Brand: </span><span style={alignright}>{props.onIndividualKeg.kegBrand}</span> <br></br>
+                <span style={alignleft}>Price: </span><span style={alignright}>{props.onIndividualKeg.kegPrice}</span> <br></br>
+                <span style={alignleft}>Flavor: </span><span style={alignright}>{props.onIndividualKeg.kegFlavor}</span> <br></br>
+                <span style={alignleft}>Qty: </span><span style={alignright}>{props.onIndividualKeg.kegQty}</span> <br></br>
                 <p>{props.onIndividualKeg.kegAlertMessage === "Almost Empty !" ? (<span className="purpleColor">{props.onIndividualKeg.kegAlertMessage}</span>) : (<span className="redColor">{props.onIndividualKeg.kegAlertMessage}</span>)}</p>
-                {/* <button onClick={() => props.onHandleDelete(props.keg.kegId)}>Delete Keg</button>                      */}
-                <button disabled={props.onIndividualKeg.kegDisableButton} onClick={() => props.whenSellPintClicked(props.onIndividualKeg.kegId)}>Sell Pint</button>
-                <button onClick={() => props.whenKegClicked(props.onIndividualKeg.kegId)}>See Keg Details</button>
+                <button className="btn-success" disabled={props.onIndividualKeg.kegDisableButton} onClick={() => props.whenSellPintClicked(props.onIndividualKeg.kegId)}>Sell Pint</button><br></br><br></br>
+                <button className="btn-warning" onClick={() => props.whenKegClicked(props.onIndividualKeg.kegId)}>See Keg Details</button>
             </div>
         </React.Fragment>
     );

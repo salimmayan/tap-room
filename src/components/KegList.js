@@ -11,7 +11,7 @@ function KegList(props) {
         gridTemplateRows: 'auto',
         // backgroundColor: '#2196F3',
         padding: '10px',
-        margin: '20px',
+        margin: '40px',
       }
     return (
         <React.Fragment>
