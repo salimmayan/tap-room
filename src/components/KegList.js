@@ -17,7 +17,7 @@ function KegList(props) {
         <React.Fragment>
              <div style={gridContainer}>
             {props.kegList.map((currentKeg) => 
-                 <Keg whenKegClicked ={props.onKegSelection} onIndividualKeg={currentKeg} whenSellPintClicked = {props.onSellPint} key={currentKeg.kegId}  />
+                 <Keg now = {(currentKeg.kegQty/24)*100} whenKegClicked ={props.onKegSelection} onIndividualKeg={currentKeg} whenSellPintClicked = {props.onSellPint} key={currentKeg.kegId}  />
             )}
             </div>
         </React.Fragment>
