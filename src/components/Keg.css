@@ -96,16 +96,32 @@
     margin-left: 45%; /*USEFUL: Aligns button to centre  */
   }
   
-  .redColor {
-    color: #ff0000;
-    font-weight: bold;
-    font-size: large;
+  .coralColor {
+    color: blue;
+    font-family: Indie Flower, cursive;
+    font-weight: 700;
+    text-align: center;
   }
-  
+
+  .greenColor {
+    color: greenyellow;
+    font-family: Indie Flower, cursive;
+    font-weight: 700;
+    text-align: center;
+  }
+ 
+  .redColor {
+    color: red;
+    font-family: Indie Flower, cursive;
+    font-weight: 700;
+    text-align: center;
+  }
+
   .purpleColor {
     color: purple;
-    font-weight: bold;
-    font-size: large;
+    font-family: Indie Flower, cursive;
+    font-weight: 700;
+    text-align: center;
   }
   
   .kegDetail {
@@ -186,3 +202,17 @@
     font-weight: 3000;
     margin-bottom: 10px;
   }
+
+  .alignleft {
+    float: left;
+    color: black;
+    font-family: Indie Flower, cursive;
+    font-weight: 700;
+}
+
+.alignright {
+    float: right;
+    color: blue;
+    font-family: Indie Flower, cursive;
+    font-weight: 700;
+}

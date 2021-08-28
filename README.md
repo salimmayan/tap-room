@@ -1,70 +1,108 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# # `Soda Fountain` Tap Room
 
-## Available Scripts
+#### A React web application that represents a `Tap room Tracker` where a `Soda Fountain store` can track their kegs. Application lets store track the remaining amount in each Soda Keg & listing of `Main` and `Further Exploration` user stories are listed below.
 
-In the project directory, you can run:
+<details>
+    <summary><span style="color:red"><strong>Expand to Read Mandatory User Stories</strong></summary>
 
-### `npm start`
+1. Render list/menu of all available kegs. For each keg, `Name`,  `Brand`,  `Price`  and  `Flavor`  are displayed.
+2. User can populate and submit a form to add a `New` keg to list.
+3. User can click on a button on any keg to see its `Details` page.
+4. User can see how many pints are left in a keg. **PS:**  A keg is hardcoded to 24 pints for ease of use (so that one can demonstrate emptying of keg).
+5. User can click a button next to a keg whenever a pint is sold. Each click will decrease the number of pints left by 1. Once pint hits 0, further reduction is prevented by disabling the button.
+6. `Progress Bar` that gives an indication of Quantity of beverage in a keg.
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<details>
+    <summary><span style="color:red"><strong>Expand to Read `Further Exploration` User Stories</strong></summary>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Option to `Edit` a keg's properties after entering them (to correct mistaken entry).
+2. Option to `Delete` a keg.
+3. Keg gets updated with a message `"Out of Stock"` once it's empty.
+4. When pints left in a keg is under 10, keg gets updated with a message `"Almost Empty"`. Also color of `Qty` will change from `blue` to `red`
+</details>
 
-### `npm test`
+## Component Tree Diagram
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![alt text](https://github.com/Rekjal/tap-room/src/img/ComponentDiagram.png)
 
-### `npm run build`
+##### Date: **08/28/2021**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### By **Salim Mayan**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Specifications:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Spec 1: Creation of `New Keg`
 
-### `npm run eject`
+    + Input: On `landing page`, click on `Add New Keg` button
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    + Output: The app shall display below component. ![alt text](https://github.com/Rekjal/projTapRoom/blob/master/src/img/Add_New_Keg.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+When above form is submitted, a flex box gets created with entered information (see image below)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![alt text](https://github.com/Rekjal/projTapRoom/blob/master/src/img/Tap_Room_with_1_Keg.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Spec 2: Display `Keg Details`
 
-## Learn More
+    + Input: Click anywhere inside a flex box
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    + Output: User gets navigated to `Keg Details page` from where one can either `Delete` entire keg or `Update` data pertaining to current keg.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![alt text](https://github.com/Rekjal/projTapRoom/blob/master/src/img/Keg_Details_page.png)
 
-### Code Splitting
+* Spec 3: Rendering of unlimited number of cards in an evenly spaced manner
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    + Input: Add multiple kegs
+    
+    + Output: UI will render multiple kegs in an evenly spaced manner
 
-### Analyzing the Bundle Size
+![alt text](https://github.com/Rekjal/projTapRoom/blob/master/src/img/Tap_Room_with_many_Kegs.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Spec 4: Track remaining pint in a Keg and display alert messages when quantity edges closer to 0
 
-### Making a Progressive Web App
+    + Input: Click `Sell` button on a keg box
+    
+    + Output: Each click of button will decrease the number of pints left by 1.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+		+ Once pint hits 0, further reduction is prevented by disabling the button.
 
-### Advanced Configuration
+		+ Keg gets updated with a message `"Out of Stock"` once it's empty.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+		+ When pints left in a keg is under 10, keg gets updated with a message `"Almost Empty"`.
 
-### Deployment
+![alt text](https://github.com/Rekjal/projTapRoom/blob/master/src/img/Tap_Room_tracking_multiple_kegs_its_pints_and_alert_Messages.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Setup/Installation Requirements
 
-### `npm run build` fails to minify
+1. Clone this repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. To run program, do `npm install' and "npm start'
+
+## Known Bugs
+
+* No known bugs at this time.
+
+## Technologies Used
+
+* React
+
+* HTML
+
+* CSS
+
+* Flex
+
+* JS
+
+* Bootstrap
+
+## Support and contact details
+
+_Email no one with any questions, comments, or concerns._
+
+### License
+
+*{This software is licensed under the MIT license}*
+
+Copyright (c) 2020 **_{Salim Mayan}_**
