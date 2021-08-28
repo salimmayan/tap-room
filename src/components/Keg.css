@@ -95,6 +95,11 @@
     align-items: center;
     margin-left: 45%; /*USEFUL: Aligns button to centre  */
   }
+
+  .centerPrimary {
+    align-items: center;
+    margin-left: 50%; /*USEFUL: Aligns button to centre  */
+  }
   
   .coralColor {
     color: blue;
@@ -123,22 +128,31 @@
     font-weight: 700;
     text-align: center;
   }
+
+  .paraMargin {
+      margin: 10px auto 10px, auto;
+  }
+
+  .floatToBottom {
+      float: bottom;
+  }
   
   .kegDetail {
     font-family: "Indie Flower", cursive;
     text-align: left;
     font-weight: 700;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
-    width: 700px;
-    height: 400px;
+    width: 600px;
+    height: 300px;
     border: 2px lightgrey solid;
     border-radius: 5px;
     box-shadow: 3px 3px 3px 0 lightgrey;
-    margin: 10px auto 10 auto;
-    align-items: left;
-    justify-content: center;
-    padding: 5px;
+    padding: 10px 10px 10px 10px !important; 
+    /* margin: 10px 10px 10px 10px !important;  */
+    /* align-items: left; */
+    /* justify-content: center; */
+    margin: 5px auto 5 auto !important; 
   }
   
   .kegDetailButton {

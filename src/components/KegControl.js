@@ -109,6 +109,7 @@ class KegControl extends React.Component {
                 {/* <h1>KegControl</h1> */}
                 {componentToDisplay} {/* why does componentToDisplay while it needs curly braces, not need "this." */}
                 <div style={buttonCSS}>
+                    <br></br>
                     <button onClick={this.handleClick}>{buttonText}</button></div>
             </React.Fragment>
         )

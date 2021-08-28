@@ -1,19 +1,21 @@
 import React from 'react';
 
-function Header () {
-    const headerCSS = {        
+function Header() {
+    const headerCSS = {
         fontSize: '30px',
         textAlign: 'center',
         padding: '5px',
         margin: '5px',
         fontSize: 'xxLarge',
         color: 'orange'
-      }
+    }
 
     return (
         <React.Fragment>
             <div style={headerCSS}>
-            <h1>Tap Room</h1>
+                <h1>Soda Fountain Tap Room</h1>
+                <br></br>
+                <br></br>
             </div>
         </React.Fragment>
 

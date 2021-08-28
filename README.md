@@ -33,6 +33,8 @@
 
 4. When pints left in a keg is under 10, keg gets updated with a message `"Almost Empty"`. Also color of `Qty` will change from `blue` to `red`
 
+5. Styling with Flex Box, stylesheets, and CSS objects
+
 </details>
 
 ## Component Tree Diagram

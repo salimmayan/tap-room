@@ -21,9 +21,11 @@ function KegDetail(props) {
                 <span className="alignleft">Flavor: </span><span className="alignright">{props.keg.kegFlavor}</span> <br></br>
                 <span className="alignleft">Qty: </span><span className="alignright">{props.keg.kegQty}</span> <br></br>
                 <span className="alignleft">Keg ID: </span><span className="alignright">{props.keg.kegId}</span> <br></br>
-                <button className="btn-danger" onClick={() => props.onHandleDelete(props.keg.kegId)}>Delete Keg</button>&nbsp;  &nbsp;
-                <button className="btn-warning" onClick={() => props.onHandleEdit(props.keg.kegId)}>Edit Keg</button>
-                <br></br><br></br>
+                <br></br> <br></br>
+                <div className="kegDetailButton">
+                    <button className="btn-danger" onClick={() => props.onHandleDelete(props.keg.kegId)}>Delete Keg</button>&nbsp;  &nbsp;
+                    <button className="btn-warning" onClick={() => props.onHandleEdit(props.keg.kegId)}>Edit Keg</button>
+                </div>
             </div>
         </React.Fragment>
     );
