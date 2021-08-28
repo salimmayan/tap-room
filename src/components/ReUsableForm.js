@@ -13,9 +13,9 @@ function ReUsableForm(props) {
     }
 
     return (
-        <React.Fragment>
-            <div className="reUsableKegForm coralColor">
-            <h5 style={coralColor}>Add New Keg</h5>
+        <React.Fragment>            
+            <div className="reUsableKegForm coralColor">   
+            <h5 className="coralColor">{props.title}</h5>         
             <form onSubmit={props.reusableFormSubmissionHandler}>
                 <input required type='text' name='kegName' placeholder='Enter Name' />
                 <input required type='text' name='kegBrand' placeholder='Enter Brand' />
@@ -31,7 +31,8 @@ function ReUsableForm(props) {
 
 ReUsableForm.propTypes = {
     buttonText: PropTypes.string,
-    resuableFormSubmissionHandler: PropTypes.func
+    resuableFormSubmissionHandler: PropTypes.func,
+    title: PropTypes.string
 };
 
 export default ReUsableForm;

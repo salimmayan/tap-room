@@ -14,7 +14,8 @@ function NewKegForm(props) {
 
     return (
         <React.Fragment>
-            <ReUsableForm reusableFormSubmissionHandler={handleNewKegFormSubmission} buttonText="Add Keg" />
+            {/* <h5 className="coralColor">Add New Keg</h5> */}
+            <ReUsableForm reusableFormSubmissionHandler={handleNewKegFormSubmission} buttonText="Add Keg" title="Add New Keg"  />
         </React.Fragment>
     );
 }

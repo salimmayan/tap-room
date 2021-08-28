@@ -11,7 +11,8 @@ function EditKegForm(props) {
 
     return (
         <React.Fragment>
-            <ReUsableForm reusableFormSubmissionHandler={handleEditKegFormSubmission} buttonText="Edit Keg" />
+            {/* <h5 className="coralColor">Edit Keg</h5> */}
+            <ReUsableForm reusableFormSubmissionHandler={handleEditKegFormSubmission} buttonText="Edit Keg" title="Edit Keg Page" />
         </React.Fragment>
     );
 }
