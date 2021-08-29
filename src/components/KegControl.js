@@ -53,12 +53,20 @@ class KegControl extends React.Component {
     handleEditKegForm = (keg) => {
         // console.log("keg in handleEditKegForm is ");
         // console.log(keg);
-        const newMasterKegList = this.state.masterKegList.filter((tempKeg) => tempKeg.kegId !== keg.kegId).concat(keg);
-        this.setState({ masterKegList: newMasterKegList, editing: false, formVisibleOnPage: false, selectedKeg: null });
+        const kegIdSortOrder  = this.state.masterKegList.map(function(keg) {
+            return keg.kegId;
+        });
+        const illSortedMasterKegList = this.state.masterKegList.filter((tempKeg) => tempKeg.kegId !== keg.kegId).concat(keg);
+        const newSortedMasterKegList = kegIdSortOrder.map((element) => illSortedMasterKegList.find((keg) => keg.kegId === element));
+        this.setState({ masterKegList: newSortedMasterKegList, editing: false, formVisibleOnPage: false, selectedKeg: null });
     }
 
     handleSellPint = (kegId) => {
         // console.log("in handleSellPint method");
+        const kegIdSortOrder  = this.state.masterKegList.map(function(keg) {
+            return keg.kegId;
+        });
+
         const tempDisableButton = "disabled";
         const tempSelectedKeg = this.state.masterKegList.filter((keg) => keg.kegId === kegId)[0];
         if (tempSelectedKeg.kegQty !== 0) {
@@ -74,8 +82,9 @@ class KegControl extends React.Component {
             }
         }
 
-        const newMasterKegList = this.state.masterKegList.filter((tempKeg) => tempKeg.kegId !== tempSelectedKeg.kegId).concat(tempSelectedKeg);
-        this.setState({ masterKegList: newMasterKegList, editing: false, formVisibleOnPage: false, selectedKeg: null });
+        const illSortedMasterKegList = this.state.masterKegList.filter((tempKeg) => tempKeg.kegId !== tempSelectedKeg.kegId).concat(tempSelectedKeg);
+        const newSortedMasterKegList = kegIdSortOrder.map((element) => illSortedMasterKegList.find((keg) => keg.kegId === element));
+        this.setState({ masterKegList: newSortedMasterKegList, editing: false, formVisibleOnPage: false, selectedKeg: null });
     }
 
     render() {
