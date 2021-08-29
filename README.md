@@ -51,12 +51,12 @@
 
 2. To run program, do `npm install' and "npm start'
 
-
+*** 
 ## Known Bugs
 
 * No known bugs at this time.
 
- 
+*** 
 ## Technologies Used
 
 * React
@@ -67,7 +67,7 @@
 * Bootstrap
 * npm
 
- 
+*** 
 ## Support and contact details
 
 * Reach Author: via <a  href="https://www.linkedin.com/in/salim-mayan/"  target="_blank">Linkedin</a> or <a  href="mailto:mailsalim@gmail.com"  target="_blank">Email</a>.
