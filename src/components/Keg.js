@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ProgressBar, Button } from 'react-bootstrap';
+import { ProgressBar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Keg.css";
 
@@ -8,19 +8,6 @@ function Keg(props) {
     // const { kegName, kegBrand, kegPrice, kegFlavor, kegId } = props.onIndividualKeg;
 
     const gridItem = {
-        // backgroundColor: 'azure',
-        // border: '1px solid rgba(0, 0, 0, 0.8)',
-        // padding: '10px',
-        // fontSize: '30px',
-        // textAlign: 'center',
-        // padding: '5px',
-        // margin: '10%',
-        // flexBasis: '25%',
-        // fontSize: 'small',
-        // borderRadius: '5px'
-        // display: 'flex',
-        // flex: '1',
-        // flexGrow: '1',
         width: '30%',
         background: '#ddd',
         margin: '10px',

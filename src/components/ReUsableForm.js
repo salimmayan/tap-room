@@ -4,14 +4,6 @@ import "./Keg.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ReUsableForm(props) {
-
-    const coralColor = {
-        color: 'coral',
-        fontFamily: 'Indie Flower", cursive',
-        fontWeight: '700',
-        textAlign: 'center'
-    }
-
     return (
         <React.Fragment>            
             <div className="reUsableKegForm coralColor">   

@@ -58,7 +58,7 @@ class KegControl extends React.Component {
     }
 
     handleSellPint = (kegId) => {
-        console.log("in handleSellPint method");
+        // console.log("in handleSellPint method");
         const tempDisableButton = "disabled";
         const tempSelectedKeg = this.state.masterKegList.filter((keg) => keg.kegId === kegId)[0];
         if (tempSelectedKeg.kegQty !== 0) {
@@ -83,28 +83,28 @@ class KegControl extends React.Component {
         let componentToDisplay = null;
         let buttonText = null;
         if (this.state.editing === true) {
-            console.log("Inside editing is true");
+            // console.log("Inside editing is true");
             componentToDisplay = <EditKegForm keg={this.state.selectedKeg} onEditKegForm={this.handleEditKegForm} />
             buttonText = "Go back to Keg List";
         }
         else if (this.state.selectedKeg != null) {
-            console.log("Inside selectedKeg not null");
+            // console.log("Inside selectedKeg not null");
             componentToDisplay = <KegDetail keg={this.state.selectedKeg} onHandleDelete={this.handleDelete} onHandleEdit={this.handleEdit} />
             buttonText = "Go back to Keg List";
         }
         else if (this.state.formVisibleOnPage === true) {
-            console.log("Inside formVisibleOnPage true");
+            // console.log("Inside formVisibleOnPage true");
             componentToDisplay = <NewKegForm onNewKegForm={this.handleAddingNewKegToList} />
             buttonText = "Go back to Keg List";
         }
         else {
-            console.log("Inside formVisibleOnPage false");
+            // console.log("Inside formVisibleOnPage false");
             componentToDisplay = <KegList onKegSelection={this.handleChangingSelectedKeg} kegList={this.state.masterKegList} onSellPint={this.handleSellPint} />
             buttonText = "Add New Keg";
         }
 
         const buttonCSS = {
-            fontSize: '30px',
+            // fontSize: '30px',
             textAlign: 'center',
             padding: '5px',
             margin: '5px',

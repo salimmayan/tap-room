@@ -2,7 +2,7 @@ import React from 'react';
 
 function Header() {
     const headerCSS = {
-        fontSize: '30px',
+        // fontSize: '30px',
         textAlign: 'center',
         padding: '5px',
         margin: '5px',
