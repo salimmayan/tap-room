@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "./Keg.css";
+import "../css/Keg.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function KegDetail(props) {

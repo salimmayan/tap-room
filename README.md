@@ -63,6 +63,7 @@
 * Flex
 * JS
 * Bootstrap
+* npm
 
 ## Support and contact details
 

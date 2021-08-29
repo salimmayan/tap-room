@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ProgressBar } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Keg.css";
+import "../css/Keg.css";
 
 function Keg(props) {
     // const { kegName, kegBrand, kegPrice, kegFlavor, kegId } = props.onIndividualKeg;
