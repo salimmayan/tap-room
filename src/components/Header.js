@@ -7,7 +7,7 @@ function Header() {
         padding: '5px',
         margin: '5px',
         fontSize: 'xxLarge',
-        color: 'orange'
+        color: 'red'
     }
 
     return (

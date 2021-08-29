@@ -4,21 +4,27 @@ import PropTypes from 'prop-types';
 
 function KegList(props) {
     const gridContainer = {
-        display: 'grid',
-        justifyItems: 'center',
+        display: 'flex',
+        flexFlow: 'flexStart',
+        justifyContent: 'center',
         alignItems: 'center',
-        gridTemplateColumns: 'auto auto auto',
-        gridTemplateRows: 'auto',
-        // backgroundColor: '#2196F3',
-        padding: '10px',
-        margin: '40px',
-      }
+        // margin: 'auto, 330px, auto, 330px',
+        marginTop: '30px',
+        marginBottom: '50px',
+        marginRight: '30%',
+        marginLeft: '30%',
+        padding: '20px',
+        // height: '80vh',
+        background: '#F1F1F1',
+        border: '1px solid red',
+        flexWrap: 'wrap'
+    }
     return (
         <React.Fragment>
-             <div style={gridContainer}>
-            {props.kegList.map((currentKeg) => 
-                 <Keg now = {(currentKeg.kegQty/24)*100} whenKegClicked ={props.onKegSelection} onIndividualKeg={currentKeg} whenSellPintClicked = {props.onSellPint} key={currentKeg.kegId}  />
-            )}
+            <div style={gridContainer}>
+                {props.kegList.map((currentKeg) =>
+                    <Keg now={(currentKeg.kegQty / 24) * 100} whenKegClicked={props.onKegSelection} onIndividualKeg={currentKeg} whenSellPintClicked={props.onSellPint} key={currentKeg.kegId} />
+                )}
             </div>
         </React.Fragment>
     );
