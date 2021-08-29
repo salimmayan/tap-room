@@ -74,4 +74,4 @@
 *{This software is licensed under the MIT license}*
 
 
-Copyright (c) 2020 **_{Salim Mayan}_**
+Copyright (c) 2021 **_{Salim Mayan}_**
