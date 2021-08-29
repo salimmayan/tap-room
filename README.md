@@ -1,6 +1,6 @@
 ## `Soda Fountain` Tap Room
 
-#### A React web application that represents a `Tap room Tracker` where a `Soda Fountain store` can track their kegs. Application lets store track the remaining amount in each Soda Keg & listing of `Main` and `Further Exploration` user stories are listed below.
+A React web application that represents a `Tap Room Tracker` where a `Soda Fountain Tap Room` can track their kegs. Application lets store track the remaining amount in each Soda Keg & listing of `Main` and `Further Exploration` user stories are listed below.
 
 <details>
 
