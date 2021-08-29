@@ -21,7 +21,7 @@ function Keg(props) {
         // display: 'flex',
         // flex: '1',
         // flexGrow: '1',
-        width: '25%',
+        width: '30%',
         background: '#ddd',
         margin: '10px',
         padding: '10px',
