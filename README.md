@@ -37,24 +37,26 @@
 
 </details>
 
+*** 
+
 ## Component Tree Diagram
 
 ![Component Tree Diagram](https://github.com/salimmayan/tap-room/blob/main/src/img/ComponentDiagram.png)
  
-##### Date: **08/28/2021**
-
-#### By **Salim Mayan**
+*** 
 
 ## Setup/Installation Requirements
 
 1. Clone this repository.
 
 2. To run program, do `npm install' and "npm start'
- 
+
+*** 
 ## Known Bugs
 
 * No known bugs at this time.
 
+*** 
 ## Technologies Used
 
 * React
@@ -65,6 +67,7 @@
 * Bootstrap
 * npm
 
+*** 
 ## Support and contact details
 
 * Reach Author: via <a  href="https://www.linkedin.com/in/salim-mayan/"  target="_blank">Linkedin</a> or <a  href="mailto:mailsalim@gmail.com"  target="_blank">Email</a>.
