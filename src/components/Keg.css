@@ -163,6 +163,7 @@
     margin-right: 10px;
     margin-left: 10px;
     justify-content: space-between; /* combined with "flex-basis: 40%;" in child creates gap between buttons */
+    /* align-items: flex-end; */
   }
   
   .kegDetailButton button {

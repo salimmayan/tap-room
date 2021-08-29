@@ -17,7 +17,8 @@ function KegList(props) {
         // height: '80vh',
         background: '#F1F1F1',
         border: '1px solid red',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        borderRadius: '9px'
     }
     return (
         <React.Fragment>
